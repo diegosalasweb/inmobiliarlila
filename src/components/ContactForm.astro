@@ -1,0 +1,124 @@
+---
+interface Props {
+  productType: 'bodegas' | 'estacionamientos';
+}
+
+const { productType } = Astro.props;
+
+const formConfig = {
+  bodegas: {
+    email: 'bodegasbuzeta@gmail.com',
+    whatsapp: '56932455405',
+    title: 'Solicitar Cotización de Bodega',
+    submitText: 'Solicitar Cotización'
+  },
+  estacionamientos: {
+    email: 'estacionamientoslila@gmail.com',
+    whatsapp: '56932455405',
+    title: 'Contactar para Estacionamiento',
+    submitText: 'Enviar Consulta'
+  }
+};
+
+const config = formConfig[productType];
+---
+
+<section class="form-section" id="formulario">
+  <div class="container">
+    <div class="form-wrapper">
+      <h2 class="form-title">{config.title}</h2>
+      <p class="form-subtitle">Completa el formulario y te contactamos a la brevedad.</p>
+
+      <div id="form-success" class="form-success">
+        <div class="ic">✅</div>
+        <h3>¡Consulta recibida!</h3>
+        <p>Gracias por contactarnos. Nos comunicaremos contigo a la brevedad.</p>
+      </div>
+
+      <form id="contact-form">
+        <div class="form-group">
+          <label for="name">Nombre *</label>
+          <input type="text" id="name" name="name" placeholder="Tu nombre completo" required />
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email *</label>
+          <input type="email" id="email" name="email" placeholder="tu@email.com" required />
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Teléfono / WhatsApp *</label>
+          <input type="tel" id="phone" name="phone" placeholder="+56 9 XXXX XXXX" required />
+        </div>
+
+        <div class="form-group">
+          <label for="product">Producto de interés *</label>
+          <select id="product" name="product" required>
+            <option value="">Selecciona una opción</option>
+            {productType === 'bodegas' && (
+              <>
+                <option value="bodega-pequena">Bodega Pequeña (100–250 m²)</option>
+                <option value="bodega-mediana">Bodega Mediana (250–500 m²)</option>
+                <option value="bodega-grande">Bodega Grande (500 m²+)</option>
+                <option value="consulta-general">Consulta General</option>
+              </>
+            )}
+            {productType === 'estacionamientos' && (
+              <>
+                <option value="mensual">Plan Mensual</option>
+                <option value="por-minuto">Estacionamiento por Minuto</option>
+                <option value="consulta">Consulta General</option>
+              </>
+            )}
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Mensaje (opcional)</label>
+          <textarea id="message" name="message" placeholder="Cuéntanos más sobre lo que necesitas..."></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-lg form-submit">
+          {config.submitText}
+        </button>
+      </form>
+
+      <div class="form-contact-links">
+        <p style="width:100%; text-align:center; color:var(--gray-mid); font-size:0.9rem; margin-bottom:4px;">¿Prefieres contactar directamente?</p>
+        <a href={`https://wa.me/${config.whatsapp}`} target="_blank" class="form-contact-link wa">
+          💬 WhatsApp
+        </a>
+        <a href={`tel:+${config.whatsapp}`} class="form-contact-link tel">
+          📞 Llamar
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const form = document.getElementById('contact-form') as HTMLFormElement;
+  const success = document.getElementById('form-success') as HTMLDivElement;
+
+  if (form) {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const formData = new FormData(form);
+      const data = {
+        name:      formData.get('name'),
+        email:     formData.get('email'),
+        phone:     formData.get('phone'),
+        product:   formData.get('product'),
+        message:   formData.get('message'),
+        timestamp: new Date().toISOString(),
+        page:      window.location.pathname,
+      };
+
+      console.log('Form data:', data);
+
+      form.style.display = 'none';
+      if (success) success.style.display = 'block';
+    });
+  }
+</script>

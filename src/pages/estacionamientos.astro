@@ -1,0 +1,288 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ContactForm from '../components/ContactForm.astro';
+---
+
+<Layout title="Estacionamiento Techado en Santiago Centro" description="Estacionamiento techado seguro en Barrio Meiggs. Planes mensuales y por minuto. Vigilancia 24/7, ubicación estratégica cerca del Metro ULA.">
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <span class="hero-badge">Metro ULA · Barrio Meiggs</span>
+        <h1>Estacionamiento Seguro en Santiago Centro</h1>
+        <p>Ubicación estratégica a pasos del Metro Unión Latinoamericana y el Barrio Meiggs. Seguridad vigilada 24/7 con cámaras y operarios en cada piso.</p>
+        <div class="hero-cta">
+          <a href="#formulario" class="btn btn-primary btn-lg">Contactar Ahora</a>
+          <a href="https://wa.me/56932455405" class="btn btn-white btn-lg" target="_blank">💬 Consultar por WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">¿Por qué estacionar con nosotros?</h2>
+        <p class="section-subtitle">Seguridad, comodidad y ubicación inmejorable en Santiago Centro.</p>
+      </div>
+      <div class="grid-3">
+        <div class="card">
+          <div class="card-icon">🔒</div>
+          <h3 class="card-title">Seguridad Total</h3>
+          <p class="card-text">Vigilancia permanente, cámaras de seguridad y operarios en cada piso. Tu auto está en buenas manos.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">📍</div>
+          <h3 class="card-title">Ubicación Premium</h3>
+          <p class="card-text">A pasos del Metro ULA y del Barrio Meiggs. El lugar perfecto para tus compras y negocios en Santiago Centro.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🏢</div>
+          <h3 class="card-title">Infraestructura Moderna</h3>
+          <p class="card-text">Instalaciones limpias, bien iluminadas y mantenidas. Múltiples pisos disponibles.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">💰</div>
+          <h3 class="card-title">Precios Competitivos</h3>
+          <p class="card-text">Plan mensual o por minuto. Elige la opción que mejor se adapte a tu necesidad.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🚽</div>
+          <h3 class="card-title">Baños Gratuitos</h3>
+          <p class="card-text">Todas las facilidades que necesitas mientras realizas tus compras o trámites.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">✅</div>
+          <h3 class="card-title">25+ Años de Experiencia</h3>
+          <p class="card-text">Empresa consolidada en el rubro. Confianza y profesionalismo desde 1999.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ubicación -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Ubicación Estratégica</h2>
+      </div>
+      <div class="location-card" style="max-width:640px; margin:0 auto;">
+        <h3>📍 Estacionamiento Metro ULA</h3>
+        <p><strong>Rodulfo Phillipi 36, Santiago</strong></p>
+        <div style="margin-top:20px; padding-top:20px; border-top:1px solid var(--border);">
+          <p style="font-weight:600; margin-bottom:12px;">Acceso rápido desde:</p>
+          <ul class="feature-list">
+            <li>Metro Unión Latinoamericana — a pasos</li>
+            <li>Barrio Meiggs — compras mayoristas</li>
+            <li>Mall Mayorista Plaza Lila — acceso directo</li>
+            <li>Santiago Centro — zona comercial principal</li>
+          </ul>
+        </div>
+        <div style="margin-top:16px; background:var(--orange-light); padding:16px; border-radius:var(--radius-sm);">
+          <p style="color:var(--orange-dark); font-size:0.95rem; margin:0;">
+            💡 <strong>Consejo:</strong> Estaciona con nosotros y disfruta tus compras sin estrés. Con más de 80 locales en la zona, Plaza Lila y el Barrio Meiggs ofrecen la mejor variedad de productos.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Planes -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Nuestros Planes</h2>
+        <p class="section-subtitle">Elige la modalidad que más se ajusta a tu rutina.</p>
+      </div>
+      <div class="grid-2">
+
+        <div class="plan-card featured">
+          <span class="plan-badge">Popular</span>
+          <h3 style="margin-bottom:16px;">Plan Mensual</h3>
+
+          <div style="margin-bottom:24px; padding-bottom:24px; border-bottom:1px solid var(--border);">
+            <p style="font-weight:700; font-size:0.95rem; margin-bottom:12px; color:var(--gray);">Opción 1 — Día Completo</p>
+            <div class="plan-price">$110.000 <span>/ mes</span></div>
+            <ul class="feature-list" style="margin-top:12px;">
+              <li>Lunes a Sábado</li>
+              <li>07:00 – 22:00 hrs</li>
+              <li>Acceso ilimitado</li>
+            </ul>
+          </div>
+
+          <div style="margin-bottom:24px;">
+            <p style="font-weight:700; font-size:0.95rem; margin-bottom:12px; color:var(--gray);">Opción 2 — Acceso 24/7</p>
+            <div class="plan-price">$140.000 <span>/ mes</span></div>
+            <ul class="feature-list" style="margin-top:12px;">
+              <li>Lunes a Domingo</li>
+              <li>24 horas todos los días</li>
+              <li>Máxima flexibilidad</li>
+            </ul>
+          </div>
+
+          <a href="#formulario" class="btn btn-primary" style="width:100%; justify-content:center;">Solicitar Plan</a>
+        </div>
+
+        <div class="plan-card">
+          <span class="plan-badge" style="background:var(--gray);">Flexible</span>
+          <h3 style="margin-bottom:16px;">Plan por Minuto</h3>
+          <div class="plan-price">$45 <span>/ min</span></div>
+          <p class="plan-desc">Sin compromiso, pagas solo lo que usas.</p>
+
+          <div style="background:var(--gray-bg); padding:16px; border-radius:var(--radius-sm); margin-bottom:20px;">
+            <p style="font-weight:600; margin-bottom:10px; color:var(--gray);">Equivalencias:</p>
+            <ul class="feature-list">
+              <li>1 hora = $2.700</li>
+              <li>Máximo del día = $10.800</li>
+            </ul>
+          </div>
+
+          <p style="font-weight:600; margin-bottom:10px; color:var(--gray);">Ideal para:</p>
+          <ul class="feature-list" style="margin-bottom:24px;">
+            <li>Compras rápidas y visitas ocasionales</li>
+            <li>Flexibilidad sin compromiso</li>
+            <li>Máximo costo diario garantizado</li>
+          </ul>
+
+          <a href="#formulario" class="btn btn-outline" style="width:100%; justify-content:center;">Más Información</a>
+        </div>
+
+      </div>
+
+      <div style="text-align:center; margin-top:32px; padding:28px; background:var(--gray-bg); border-radius:var(--radius);">
+        <p style="font-weight:600; margin-bottom:8px;">¿Dudas sobre cuál plan elegir?</p>
+        <p style="color:var(--gray-mid); margin-bottom:20px;">Te ayudamos a encontrar la mejor opción para tus necesidades.</p>
+        <a href="https://wa.me/56932455405?text=Hola%20Lila%2C%20tengo%20preguntas%20sobre%20los%20planes%20de%20estacionamiento" class="btn btn-primary" target="_blank">💬 Consultar por WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Qué incluye -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Lo que incluye tu estacionamiento</h2>
+      </div>
+      <div class="grid-2">
+        <div class="card">
+          <h3 class="card-title" style="color:var(--orange);">Seguridad y Vigilancia</h3>
+          <ul class="feature-list">
+            <li>Operarios en cada piso durante todo el horario</li>
+            <li>Cámaras de seguridad de vigilancia</li>
+            <li>Sistema de acceso controlado</li>
+            <li>Vigilancia constante</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3 class="card-title" style="color:var(--orange);">Comodidades y Servicios</h3>
+          <ul class="feature-list">
+            <li>Baños gratuitos para clientes</li>
+            <li>Espacios bien iluminados</li>
+            <li>Múltiples pisos disponibles</li>
+            <li>Infraestructura moderna y limpia</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cómo funciona -->
+  <section class="section" id="como-funciona">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">¿Cómo funciona?</h2>
+        <p class="section-subtitle">4 pasos simples para estacionar sin estrés.</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="step-number">1</div>
+          <h4>Ingresa</h4>
+          <p>Llega a Rodulfo Phillipi 36. Nuestro personal te recibirá y facilitará el acceso.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">2</div>
+          <h4>Estaciona</h4>
+          <p>Elige tu espacio en cualquiera de nuestros pisos. Cámaras y operarios vigilan constantemente.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">3</div>
+          <h4>Disfruta</h4>
+          <p>Realiza tus compras en el Barrio Meiggs o Mall Lila con total tranquilidad.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">4</div>
+          <h4>Retira</h4>
+          <p>Acceso rápido y fácil. Paga según tu plan (mensual o por minuto) y ¡listo!</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Estaciona hoy en Estacionamiento Metro ULA</h2>
+      <p>Ubicación perfecta, seguridad garantizada y precios competitivos. Elige tu plan ahora.</p>
+      <div class="cta-buttons">
+        <a href="#formulario" class="btn btn-white btn-lg">Contactar Ahora</a>
+        <a href="https://wa.me/56932455405?text=Hola%20Lila%2C%20me%20interesa%20el%20estacionamiento%20mensual" target="_blank" class="btn btn-outline btn-lg" style="border-color:white; color:white;">💬 Consultar Planes</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Formulario -->
+  <ContactForm productType="estacionamientos" />
+
+  <!-- FAQs -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Preguntas Frecuentes</h2>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">¿Es seguro dejar mi auto? <span class="arrow">▼</span></button>
+        <div class="faq-answer">Sí, totalmente. Contamos con vigilancia permanente, cámaras de seguridad y operarios en cada piso. Tu auto está bajo control constante.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">¿Cuál es la mejor opción de pago? <span class="arrow">▼</span></button>
+        <div class="faq-answer">Depende de tu uso. Si vienes regularmente, el plan mensual es más económico. Si es ocasional, paga por minuto con máximo garantizado de $10.800/día.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">¿Puedo cambiar de plan? <span class="arrow">▼</span></button>
+        <div class="faq-answer">Claro, puedes cambiar entre planes cuando lo necesites. Contáctanos para ajustar tu modalidad de pago.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">¿Hay estacionamiento para personas con discapacidad? <span class="arrow">▼</span></button>
+        <div class="faq-answer">Sí, contamos con espacios habilitados. Contáctanos para información específica sobre disponibilidad y accesibilidad.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">¿Los baños son realmente gratuitos? <span class="arrow">▼</span></button>
+        <div class="faq-answer">Sí, nuestros baños son cómodos, limpios y completamente gratuitos para todos nuestros clientes, disponibles antes y después de tus compras.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">¿Cómo contacto en caso de emergencia? <span class="arrow">▼</span></button>
+        <div class="faq-answer">Nuestro personal está disponible durante todo el horario de atención. Teléfono: +56 9 3245 5405 o WhatsApp directo.</div>
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<script>
+  document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const answer = btn.nextElementSibling as HTMLElement;
+      const isOpen = btn.classList.contains('open');
+      document.querySelectorAll('.faq-question').forEach(b => {
+        b.classList.remove('open');
+        (b.nextElementSibling as HTMLElement).classList.remove('open');
+      });
+      if (!isOpen) {
+        btn.classList.add('open');
+        answer.classList.add('open');
+      }
+    });
+  });
+</script>

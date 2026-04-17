@@ -1,0 +1,221 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ContactForm from '../components/ContactForm.astro';
+---
+
+<Layout title="Bodegas en Santiago Centro" description="Arrienda bodegas seguras en Santiago Centro. Tamaños desde 100m² hasta 900m². Seguridad 24/7, fácil acceso desde Barrio Meiggs.">
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <span class="hero-badge">2 recintos en Santiago Centro</span>
+        <h1>Bodegas Seguras en Santiago Centro</h1>
+        <p>Espacios de almacenamiento profesional con seguridad 24/7, ubicados estratégicamente cerca del Barrio Meiggs. Tamaños flexibles para tu negocio.</p>
+        <div class="hero-cta">
+          <a href="#formulario" class="btn btn-primary btn-lg">Solicitar Cotización</a>
+          <a href="https://wa.me/56932455405" class="btn btn-white btn-lg" target="_blank">💬 Consultar por WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">¿Por qué elegir nuestras bodegas?</h2>
+        <p class="section-subtitle">Seguridad, ubicación y flexibilidad para que tu operación funcione sin problemas.</p>
+      </div>
+      <div class="grid-3">
+        <div class="card">
+          <div class="card-icon">🔒</div>
+          <h3 class="card-title">Máxima Seguridad</h3>
+          <p class="card-text">Guardias 24/7, cámaras de vigilancia y control de ingreso en cada vehículo. Tu mercancía está protegida siempre.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">📍</div>
+          <h3 class="card-title">Ubicación Estratégica</h3>
+          <p class="card-text">Solo 10–15 minutos en auto desde el Barrio Meiggs. Acceso rápido y fácil para tu operación diaria.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">📦</div>
+          <h3 class="card-title">Flexibilidad de Tamaños</h3>
+          <p class="card-text">Desde 100 m² hasta 900 m². Encuentra el espacio perfecto sin pagar por más de lo que necesitas.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🚚</div>
+          <h3 class="card-title">Zona de Descargas</h3>
+          <p class="card-text">Espacio cómodo para camiones con fácil maniobra. Operaciones de entrada y salida sin complicaciones.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">⏰</div>
+          <h3 class="card-title">Horarios Convenientes</h3>
+          <p class="card-text">Abierto lunes a sábados 07:00–20:00 hrs. Horarios pensados para comerciantes.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">✅</div>
+          <h3 class="card-title">25+ Años de Experiencia</h3>
+          <p class="card-text">Confianza y profesionalismo comprobado. Somos la opción de referencia en Santiago Centro.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ubicaciones -->
+  <section class="section section-alt" id="ubicaciones">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Nuestras Ubicaciones</h2>
+      </div>
+      <div class="grid-2">
+        <div class="location-card">
+          <h3>📍 Recinto Centro</h3>
+          <p><strong>Almirante Churruca 3181, Santiago</strong></p>
+          <p style="margin-top:10px;">Ubicación cercana al Barrio Meiggs. Ideal para comerciantes de la zona.</p>
+          <p style="margin-top:10px; color:var(--orange); font-weight:600;">⏱ 10 min desde Meiggs</p>
+          <p style="margin-top:8px; font-size:0.9rem; color:var(--gray-mid);">Fácil acceso · Seguridad garantizada · Infraestructura moderna</p>
+        </div>
+        <div class="location-card">
+          <h3>📍 Recinto Estación Central</h3>
+          <p><strong>Avda. Buzeta N°3558, Estación Central</strong></p>
+          <p style="margin-top:10px;">Ubicación estratégica con excelente conectividad vial.</p>
+          <p style="margin-top:10px; color:var(--orange); font-weight:600;">⏱ 15 min desde Meiggs</p>
+          <p style="margin-top:8px; font-size:0.9rem; color:var(--gray-mid);">Transporte fluido · Estacionamiento cómodo · Control total</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tabla de tamaños -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Tamaños y Disponibilidad</h2>
+        <p class="section-subtitle">Elige el tamaño que mejor se ajusta a tu operación.</p>
+      </div>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Tamaño</th>
+              <th>Rango de metros</th>
+              <th>Ideal para</th>
+              <th>Características</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Bodega Pequeña</strong></td>
+              <td>100 – 250 m²</td>
+              <td>Pequeños comercios, artesanos</td>
+              <td>Perfecta para emprender o ampliar</td>
+            </tr>
+            <tr>
+              <td><strong>Bodega Mediana</strong></td>
+              <td>250 – 500 m²</td>
+              <td>Comercios medianos, distribuidores</td>
+              <td>La más solicitada, excelente relación precio-espacio</td>
+            </tr>
+            <tr>
+              <td><strong>Bodega Grande</strong></td>
+              <td>500 – 900 m²</td>
+              <td>Empresas mayoristas, grandes operaciones</td>
+              <td>Máxima capacidad para almacenes corporativos</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="text-align:center; margin-top:20px; color:var(--gray-mid); font-size:0.95rem;">
+        💡 Contáctanos para conocer precios actualizados y disponibilidad específica.
+      </p>
+    </div>
+  </section>
+
+  <!-- Qué incluye -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Qué incluye tu arriendo</h2>
+      </div>
+      <div class="grid-2">
+        <div class="card">
+          <h3 class="card-title" style="color:var(--orange);">Seguridad Integral</h3>
+          <ul class="feature-list">
+            <li>Guardias de seguridad 24/7</li>
+            <li>Sistema de cámaras de vigilancia</li>
+            <li>Control de acceso por vehículo</li>
+            <li>Registro de movimientos</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3 class="card-title" style="color:var(--orange);">Comodidades y Servicios</h3>
+          <ul class="feature-list">
+            <li>Zona de descargas amplias para camiones</li>
+            <li>Estacionamiento para vehículos de carga</li>
+            <li>Iluminación en áreas comunes</li>
+            <li>Mantenimiento regular del recinto</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Encuentra el espacio perfecto para tu negocio</h2>
+      <p>Disponibilidad inmediata en Santiago Centro. Cotización personalizada sin compromiso.</p>
+      <div class="cta-buttons">
+        <a href="#formulario" class="btn btn-white btn-lg">Solicitar Cotización</a>
+        <a href="https://wa.me/56932455405?text=Hola%20Lila%2C%20me%20interesan%20las%20bodegas" target="_blank" class="btn btn-outline btn-lg" style="border-color:white; color:white;">💬 Consultar Disponibilidad</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Formulario -->
+  <ContactForm productType="bodegas" />
+
+  <!-- FAQs -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Preguntas Frecuentes</h2>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">¿Cuál es el proceso de arriendo? <span class="arrow">▼</span></button>
+        <div class="faq-answer">Contáctanos, visitamos la bodega contigo, definimos el tamaño que necesitas, firmamos el contrato y ¡listo! Puedes empezar a usar tu espacio de inmediato.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">¿Hay período mínimo de arriendo? <span class="arrow">▼</span></button>
+        <div class="faq-answer">Contáctanos directamente para conocer nuestras políticas de arriendo flexible. Nos adaptamos a las necesidades de nuestros clientes.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">¿Puedo tener acceso fuera del horario habitual? <span class="arrow">▼</span></button>
+        <div class="faq-answer">Nuestros recintos están abiertos lunes a sábados 07:00–20:00 hrs. Para acceso fuera de estos horarios, conversemos y buscamos una solución.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">¿El arriendo incluye servicios adicionales? <span class="arrow">▼</span></button>
+        <div class="faq-answer">Sí, tu arriendo incluye seguridad 24/7, vigilancia por cámaras, mantenimiento y control de acceso. Otros servicios se pueden contratar según necesidad.</div>
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<script>
+  document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const answer = btn.nextElementSibling as HTMLElement;
+      const isOpen = btn.classList.contains('open');
+      document.querySelectorAll('.faq-question').forEach(b => {
+        b.classList.remove('open');
+        (b.nextElementSibling as HTMLElement).classList.remove('open');
+      });
+      if (!isOpen) {
+        btn.classList.add('open');
+        answer.classList.add('open');
+      }
+    });
+  });
+</script>

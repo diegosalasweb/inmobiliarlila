@@ -1,0 +1,111 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = 'Inmobiliaria Lila - Bodegas y Estacionamientos en Santiago Centro' } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <title>{title} | Inmobiliaria Lila</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <div class="header-inner">
+          <a href="/" class="logo">
+            <div class="logo-icon">🏠</div>
+            Inmobiliaria <span class="text-orange">Lila</span>
+          </a>
+          <nav class="site-nav">
+            <a href="/">Inicio</a>
+            <a href="/bodegas">Bodegas</a>
+            <a href="/estacionamientos">Estacionamientos</a>
+          </nav>
+          <div class="header-contact">
+            <a href="tel:+56932455405" class="header-phone">
+              📞 +56 9 3245 5405
+            </a>
+            <a href="https://wa.me/56932455405" target="_blank" class="btn-wa">
+              💬 WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <slot />
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-col">
+            <div class="footer-logo">
+              <div class="logo-icon">🏠</div>
+              Inmobiliaria Lila
+            </div>
+            <p>Soluciones de almacenamiento y estacionamiento en Santiago Centro.</p>
+          </div>
+          <div class="footer-col">
+            <h4>Bodegas</h4>
+            <ul>
+              <li><a href="/bodegas">Ver bodegas disponibles</a></li>
+              <li><a href="/bodegas#formulario">Solicitar cotización</a></li>
+              <li><a href="/bodegas#ubicaciones">Ubicaciones</a></li>
+            </ul>
+            <p style="margin-top:12px; font-size:0.88rem;">
+              📍 Almirante Churruca 3181, Santiago<br>
+              📍 Avda. Buzeta 3558, Estación Central
+            </p>
+          </div>
+          <div class="footer-col">
+            <h4>Estacionamientos</h4>
+            <ul>
+              <li><a href="/estacionamientos">Ver planes</a></li>
+              <li><a href="/estacionamientos#formulario">Contactar</a></li>
+              <li><a href="/estacionamientos#como-funciona">Cómo funciona</a></li>
+            </ul>
+            <p style="margin-top:12px; font-size:0.88rem;">
+              📍 Rodulfo Phillipi 36, Santiago
+            </p>
+          </div>
+          <div class="footer-col">
+            <h4>Contacto</h4>
+            <ul>
+              <li><a href="tel:+56932455405">📞 +56 9 3245 5405</a></li>
+              <li><a href="mailto:bodegasbuzeta@gmail.com">✉️ bodegasbuzeta@gmail.com</a></li>
+              <li><a href="https://wa.me/56932455405" target="_blank">💬 WhatsApp</a></li>
+            </ul>
+            <h4 style="margin-top:20px;">Horarios</h4>
+            <p>
+              Lunes a Sábado: 07:00 – 20:00 hrs<br>
+              Domingos y festivos: Cerrado
+            </p>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2024 Inmobiliaria Lila. Todos los derechos reservados.</p>
+        </div>
+      </div>
+    </footer>
+
+    <style>
+      body {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      }
+    </style>
+  </body>
+</html>
