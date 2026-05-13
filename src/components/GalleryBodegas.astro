@@ -4,17 +4,20 @@ const photos = Array.from({ length: totalPhotos }, (_, i) => {
   const num = String(i + 1).padStart(2, '0');
   return `/images/bodegas/bodega-${num}.png`;
 });
+const visiblePhotos = photos.slice(0, 8);
+const hiddenPhotos  = photos.slice(8);
 ---
 
 <section class="gallery-section section">
   <div class="container">
     <div class="section-header">
       <h2 class="section-title">Conoce Nuestras Instalaciones</h2>
-      <p class="section-subtitle">Galería de 25 fotos de nuestras bodegas seguras y profesionales</p>
+      <p class="section-subtitle">Espacios modernos, seguros y bien mantenidos. Recorre nuestras bodegas de almacenamiento profesional con seguridad 24/7.</p>
     </div>
 
-    <div class="gallery-grid" id="galleryGrid">
-      {photos.map((src, index) => (
+    <!-- Primeras 6 fotos: siempre visibles -->
+    <div class="gallery-grid" id="galleryGridMain">
+      {visiblePhotos.map((src, index) => (
         <div class="gallery-item" data-index={index}>
           <img src={src} alt={`Bodega ${index + 1}`} loading="lazy" />
           <div class="gallery-overlay">
@@ -22,6 +25,25 @@ const photos = Array.from({ length: totalPhotos }, (_, i) => {
           </div>
         </div>
       ))}
+    </div>
+
+    <!-- Fotos 7-25: ocultas por defecto -->
+    <div class="gallery-grid hidden-photos" id="hiddenPhotos">
+      {hiddenPhotos.map((src, index) => (
+        <div class="gallery-item" data-index={index + 8}>
+          <img src={src} alt={`Bodega ${index + 9}`} loading="lazy" />
+          <div class="gallery-overlay">
+            <span class="gallery-zoom">⊕</span>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Botón toggle -->
+    <div class="gallery-toggle-wrapper">
+      <button class="gallery-toggle-btn" id="galleryToggleBtn">
+        Ver todas las fotos
+      </button>
     </div>
   </div>
 </section>
@@ -42,17 +64,42 @@ const photos = Array.from({ length: totalPhotos }, (_, i) => {
     background: var(--white, #fff);
   }
 
+  /* Grid base: 4 columnas desktop */
   .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 12px;
   }
 
-  @media (max-width: 768px) {
+  /* Tablet: 3 columnas */
+  @media (max-width: 1199px) and (min-width: 768px) {
     .gallery-grid {
-      grid-template-columns: 1fr;
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  /* Mobile: 2 columnas */
+  @media (max-width: 767px) {
+    .gallery-grid {
+      grid-template-columns: repeat(2, 1fr);
       gap: 8px;
     }
+  }
+
+  /* Fotos ocultas */
+  .hidden-photos {
+    display: none;
+    margin-top: 12px;
+  }
+
+  .hidden-photos.expanded {
+    display: grid;
+    animation: expandIn 0.35s ease;
+  }
+
+  @keyframes expandIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to   { opacity: 1; transform: translateY(0); }
   }
 
   .gallery-item {
@@ -102,6 +149,36 @@ const photos = Array.from({ length: totalPhotos }, (_, i) => {
   .gallery-item:hover .gallery-zoom {
     opacity: 1;
     transform: scale(1);
+  }
+
+  /* Botón toggle */
+  .gallery-toggle-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+  }
+
+  .gallery-toggle-btn {
+    background: #E67E22;
+    color: white;
+    border: none;
+    padding: 0.75rem 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+    box-shadow: 0 2px 8px rgba(230, 126, 34, 0.35);
+  }
+
+  .gallery-toggle-btn:hover {
+    background: #cf6d17;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 14px rgba(230, 126, 34, 0.45);
+  }
+
+  .gallery-toggle-btn:active {
+    transform: translateY(0);
   }
 
   /* Lightbox */
@@ -191,13 +268,8 @@ const photos = Array.from({ length: totalPhotos }, (_, i) => {
     transform: translateY(-50%) scale(1.08);
   }
 
-  .lightbox-prev {
-    left: 20px;
-  }
-
-  .lightbox-next {
-    right: 20px;
-  }
+  .lightbox-prev { left: 20px; }
+  .lightbox-next { right: 20px; }
 
   .lightbox-counter {
     position: fixed;
@@ -220,6 +292,23 @@ const photos = Array.from({ length: totalPhotos }, (_, i) => {
 
   let currentIndex = 0;
 
+  // --- Toggle expand/collapse ---
+  const hiddenPhotos  = document.getElementById('hiddenPhotos')!;
+  const toggleBtn     = document.getElementById('galleryToggleBtn')!;
+  let expanded = false;
+
+  toggleBtn.addEventListener('click', () => {
+    expanded = !expanded;
+    if (expanded) {
+      hiddenPhotos.classList.add('expanded');
+      toggleBtn.textContent = 'Ocultar fotos';
+    } else {
+      hiddenPhotos.classList.remove('expanded');
+      toggleBtn.textContent = 'Ver todas las fotos';
+    }
+  });
+
+  // --- Lightbox ---
   const lightbox    = document.getElementById('lightbox')!;
   const lightboxImg = document.getElementById('lightboxImg') as HTMLImageElement;
   const counter     = document.getElementById('lightboxCounter')!;
@@ -250,7 +339,6 @@ const photos = Array.from({ length: totalPhotos }, (_, i) => {
     updateLightbox();
   }
 
-  // Click on grid items
   document.querySelectorAll<HTMLElement>('.gallery-item').forEach(item => {
     item.addEventListener('click', () => {
       const index = parseInt(item.dataset.index ?? '0', 10);
@@ -262,12 +350,10 @@ const photos = Array.from({ length: totalPhotos }, (_, i) => {
   prevBtn.addEventListener('click', () => navigate(-1));
   nextBtn.addEventListener('click', () => navigate(1));
 
-  // Close on backdrop click
   lightbox.addEventListener('click', (e) => {
     if (e.target === lightbox) closeLightbox();
   });
 
-  // Keyboard navigation
   document.addEventListener('keydown', (e) => {
     if (!lightbox.classList.contains('active')) return;
     if (e.key === 'ArrowLeft')  navigate(-1);
