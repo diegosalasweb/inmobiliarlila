@@ -1,0 +1,277 @@
+---
+const totalPhotos = 25;
+const photos = Array.from({ length: totalPhotos }, (_, i) => {
+  const num = String(i + 1).padStart(2, '0');
+  return `/images/bodegas/bodega-${num}.png`;
+});
+---
+
+<section class="gallery-section section">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Conoce Nuestras Instalaciones</h2>
+      <p class="section-subtitle">Galería de 25 fotos de nuestras bodegas seguras y profesionales</p>
+    </div>
+
+    <div class="gallery-grid" id="galleryGrid">
+      {photos.map((src, index) => (
+        <div class="gallery-item" data-index={index}>
+          <img src={src} alt={`Bodega ${index + 1}`} loading="lazy" />
+          <div class="gallery-overlay">
+            <span class="gallery-zoom">⊕</span>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- Lightbox Modal -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Galería de imágenes">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Cerrar">&times;</button>
+  <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Foto anterior">&#8592;</button>
+  <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Siguiente foto">&#8594;</button>
+  <div class="lightbox-content">
+    <img src="" alt="" id="lightboxImg" />
+  </div>
+  <div class="lightbox-counter" id="lightboxCounter">1 / 25</div>
+</div>
+
+<style>
+  .gallery-section {
+    background: var(--white, #fff);
+  }
+
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+
+  @media (max-width: 768px) {
+    .gallery-grid {
+      grid-template-columns: 1fr;
+      gap: 8px;
+    }
+  }
+
+  .gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    cursor: pointer;
+    aspect-ratio: 4 / 3;
+    background: #f0f0f0;
+  }
+
+  .gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.35s ease;
+  }
+
+  .gallery-item:hover img {
+    transform: scale(1.06);
+  }
+
+  .gallery-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s ease;
+  }
+
+  .gallery-item:hover .gallery-overlay {
+    background: rgba(0, 0, 0, 0.35);
+  }
+
+  .gallery-zoom {
+    color: white;
+    font-size: 2.2rem;
+    opacity: 0;
+    transform: scale(0.7);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    line-height: 1;
+  }
+
+  .gallery-item:hover .gallery-zoom {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  /* Lightbox */
+  .lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.92);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 0.25s ease;
+  }
+
+  .lightbox.active {
+    display: flex;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+
+  .lightbox-content {
+    max-width: 90vw;
+    max-height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .lightbox-content img {
+    max-width: 100%;
+    max-height: 85vh;
+    object-fit: contain;
+    border-radius: 6px;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.6);
+    animation: zoomIn 0.25s ease;
+  }
+
+  @keyframes zoomIn {
+    from { transform: scale(0.93); opacity: 0; }
+    to   { transform: scale(1);    opacity: 1; }
+  }
+
+  .lightbox-close {
+    position: fixed;
+    top: 20px;
+    right: 28px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2.5rem;
+    cursor: pointer;
+    line-height: 1;
+    opacity: 0.8;
+    transition: opacity 0.2s, transform 0.2s;
+    z-index: 10000;
+  }
+
+  .lightbox-close:hover {
+    opacity: 1;
+    transform: scale(1.15);
+  }
+
+  .lightbox-nav {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255,255,255,0.12);
+    border: 2px solid rgba(255,255,255,0.3);
+    color: white;
+    font-size: 1.8rem;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s, transform 0.2s;
+    z-index: 10000;
+  }
+
+  .lightbox-nav:hover {
+    background: rgba(255,255,255,0.25);
+    transform: translateY(-50%) scale(1.08);
+  }
+
+  .lightbox-prev {
+    left: 20px;
+  }
+
+  .lightbox-next {
+    right: 20px;
+  }
+
+  .lightbox-counter {
+    position: fixed;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgba(255,255,255,0.8);
+    font-size: 0.95rem;
+    font-family: sans-serif;
+    letter-spacing: 0.05em;
+    z-index: 10000;
+  }
+</style>
+
+<script>
+  const photos: string[] = Array.from({ length: 25 }, (_, i) => {
+    const num = String(i + 1).padStart(2, '0');
+    return `/images/bodegas/bodega-${num}.png`;
+  });
+
+  let currentIndex = 0;
+
+  const lightbox    = document.getElementById('lightbox')!;
+  const lightboxImg = document.getElementById('lightboxImg') as HTMLImageElement;
+  const counter     = document.getElementById('lightboxCounter')!;
+  const closeBtn    = document.getElementById('lightboxClose')!;
+  const prevBtn     = document.getElementById('lightboxPrev')!;
+  const nextBtn     = document.getElementById('lightboxNext')!;
+
+  function openLightbox(index: number) {
+    currentIndex = index;
+    updateLightbox();
+    lightbox.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    lightbox.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  function updateLightbox() {
+    lightboxImg.src = photos[currentIndex];
+    lightboxImg.alt = `Bodega ${currentIndex + 1}`;
+    counter.textContent = `${currentIndex + 1} / ${photos.length}`;
+  }
+
+  function navigate(direction: number) {
+    currentIndex = (currentIndex + direction + photos.length) % photos.length;
+    updateLightbox();
+  }
+
+  // Click on grid items
+  document.querySelectorAll<HTMLElement>('.gallery-item').forEach(item => {
+    item.addEventListener('click', () => {
+      const index = parseInt(item.dataset.index ?? '0', 10);
+      openLightbox(index);
+    });
+  });
+
+  closeBtn.addEventListener('click', closeLightbox);
+  prevBtn.addEventListener('click', () => navigate(-1));
+  nextBtn.addEventListener('click', () => navigate(1));
+
+  // Close on backdrop click
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) closeLightbox();
+  });
+
+  // Keyboard navigation
+  document.addEventListener('keydown', (e) => {
+    if (!lightbox.classList.contains('active')) return;
+    if (e.key === 'ArrowLeft')  navigate(-1);
+    if (e.key === 'ArrowRight') navigate(1);
+    if (e.key === 'Escape')     closeLightbox();
+  });
+</script>
