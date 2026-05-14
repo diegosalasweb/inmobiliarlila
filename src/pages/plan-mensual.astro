@@ -1,0 +1,223 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ContactForm from '../components/ContactForm.astro';
+---
+
+<Layout title="Plan Mensual de Estacionamiento" description="Plan mensual de estacionamiento en Santiago Centro. Día completo $110.000/mes o acceso 24/7 $140.000/mes. Seguridad 24/7 a pasos del Metro ULA y Barrio Meiggs.">
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <span class="hero-badge">Metro ULA · Barrio Meiggs</span>
+        <h1>Plan Mensual</h1>
+        <p>Acceso flexible a tus necesidades</p>
+        <div class="hero-cta">
+          <a href="#formulario" class="btn btn-primary btn-lg">Solicitar Plan</a>
+          <a href="https://wa.me/56932455405?text=Hola%20Lila%2C%20me%20interesa%20el%20plan%20mensual%20de%20estacionamiento" class="btn btn-white btn-lg" target="_blank">💬 Consultar por WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Opciones del plan -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Elige tu Opción</h2>
+        <p class="section-subtitle">Dos modalidades para adaptarse a tu rutina diaria.</p>
+      </div>
+      <div class="grid-2">
+
+        <div class="plan-card featured">
+          <span class="plan-badge">Más solicitado</span>
+          <h3 style="margin-bottom:8px;">Opción 1 — Día Completo</h3>
+          <div class="plan-price">$110.000 <span>/ mes</span></div>
+          <p class="plan-desc">La opción ideal para comerciantes y trabajadores con horario fijo.</p>
+          <ul class="feature-list" style="margin-bottom:24px;">
+            <li>Lunes a Sábado</li>
+            <li>Horario 07:00 – 22:00 hrs</li>
+            <li>Acceso ilimitado en el horario</li>
+            <li>Vigilancia permanente</li>
+            <li>Baños gratuitos incluidos</li>
+          </ul>
+          <a href="#formulario" class="btn btn-primary" style="width:100%; justify-content:center;">Quiero esta opción</a>
+        </div>
+
+        <div class="plan-card featured">
+          <span class="plan-badge" style="background:var(--orange-dark, #cf6d17);">Máxima flexibilidad</span>
+          <h3 style="margin-bottom:8px;">Opción 2 — Acceso 24/7</h3>
+          <div class="plan-price">$140.000 <span>/ mes</span></div>
+          <p class="plan-desc">Para quienes necesitan acceso sin restricción de horario.</p>
+          <ul class="feature-list" style="margin-bottom:24px;">
+            <li>Lunes a Domingo</li>
+            <li>24 horas, todos los días</li>
+            <li>Acceso ilimitado sin restricción</li>
+            <li>Vigilancia permanente</li>
+            <li>Baños gratuitos incluidos</li>
+          </ul>
+          <a href="#formulario" class="btn btn-primary" style="width:100%; justify-content:center;">Quiero esta opción</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Tabla comparativa -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Comparativa de Opciones</h2>
+      </div>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Característica</th>
+              <th>Día Completo</th>
+              <th>Acceso 24/7</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Precio mensual</td>
+              <td><strong>$110.000</strong></td>
+              <td><strong>$140.000</strong></td>
+            </tr>
+            <tr>
+              <td>Días disponibles</td>
+              <td>Lunes – Sábado</td>
+              <td>Lunes – Domingo</td>
+            </tr>
+            <tr>
+              <td>Horario</td>
+              <td>07:00 – 22:00 hrs</td>
+              <td>24 horas</td>
+            </tr>
+            <tr>
+              <td>Acceso ilimitado</td>
+              <td>En horario</td>
+              <td>Sin restricción</td>
+            </tr>
+            <tr>
+              <td>Vigilancia</td>
+              <td>Permanente</td>
+              <td>Permanente</td>
+            </tr>
+            <tr>
+              <td>Baños gratuitos</td>
+              <td>Incluidos</td>
+              <td>Incluidos</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Beneficios -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Beneficios del Plan Mensual</h2>
+        <p class="section-subtitle">Ventajas de tener tu espacio asegurado cada mes.</p>
+      </div>
+      <div class="grid-3">
+        <div class="card">
+          <div class="card-icon">💰</div>
+          <h3 class="card-title">Ahorro Garantizado</h3>
+          <p class="card-text">Frente al plan por minuto, si usas el estacionamiento regularmente el ahorro mensual es significativo.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🔒</div>
+          <h3 class="card-title">Espacio Reservado</h3>
+          <p class="card-text">Tu lugar asegurado cada día. Sin preocuparte por disponibilidad o tarifa variable.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">📍</div>
+          <h3 class="card-title">Ubicación Estratégica</h3>
+          <p class="card-text">A pasos del Metro ULA y Barrio Meiggs. El mejor punto para tus compras y negocios.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🚽</div>
+          <h3 class="card-title">Baños Gratuitos</h3>
+          <p class="card-text">Servicio incluido sin costo adicional para todos nuestros clientes con plan mensual.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">📞</div>
+          <h3 class="card-title">Atención Personalizada</h3>
+          <p class="card-text">Personal capacitado disponible para ayudarte durante todo el horario de funcionamiento.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">✅</div>
+          <h3 class="card-title">Sin Letra Chica</h3>
+          <p class="card-text">Precio fijo mensual, sin cobros adicionales sorpresa. Lo que ves es lo que pagas.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ¿Para quién es? -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">¿Para quién es el Plan Mensual?</h2>
+      </div>
+      <div class="grid-2">
+        <div class="card">
+          <h3 class="card-title" style="color:var(--orange);">Ideal para</h3>
+          <ul class="feature-list">
+            <li>Comerciantes del Barrio Meiggs</li>
+            <li>Trabajadores con rutina diaria fija</li>
+            <li>Dueños de negocios en Santiago Centro</li>
+            <li>Distribuidores con visitas frecuentes</li>
+            <li>Compradores mayoristas habituales</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3 class="card-title" style="color:var(--orange);">Lo que incluye</h3>
+          <ul class="feature-list">
+            <li>Puesto de estacionamiento techado</li>
+            <li>Cámaras de seguridad y vigilancia</li>
+            <li>Operarios en cada piso</li>
+            <li>Baños limpios y gratuitos</li>
+            <li>Infraestructura moderna y bien mantenida</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Reserva tu plan mensual hoy</h2>
+      <p>Disponibilidad limitada. Asegura tu lugar ahora.</p>
+      <div class="cta-buttons">
+        <a href="#formulario" class="btn btn-white btn-lg">Solicitar Plan</a>
+        <a href="https://wa.me/56932455405?text=Hola%20Lila%2C%20me%20interesa%20el%20plan%20mensual%20de%20estacionamiento" target="_blank" class="btn btn-outline btn-lg" style="border-color:white; color:white;">💬 Consultar por WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Formulario -->
+  <ContactForm productType="estacionamientos" />
+
+</Layout>
+
+<script>
+  document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const answer = btn.nextElementSibling as HTMLElement;
+      const isOpen = btn.classList.contains('open');
+      document.querySelectorAll('.faq-question').forEach(b => {
+        b.classList.remove('open');
+        (b.nextElementSibling as HTMLElement).classList.remove('open');
+      });
+      if (!isOpen) {
+        btn.classList.add('open');
+        answer.classList.add('open');
+      }
+    });
+  });
+</script>

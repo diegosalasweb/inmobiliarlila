@@ -1,0 +1,193 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ContactForm from '../components/ContactForm.astro';
+---
+
+<Layout title="Plan Por Minuto - Estacionamiento" description="Estacionamiento por minuto en Santiago Centro. $45/min, 1 hora = $2.700, máximo $10.800 al día. Sin compromiso, paga solo lo que usas. Metro ULA y Barrio Meiggs.">
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <span class="hero-badge">Sin compromiso · Paga lo que usas</span>
+        <h1>Plan Por Minuto</h1>
+        <p>Flexibilidad total para compras ocasionales</p>
+        <div class="hero-cta">
+          <a href="#formulario" class="btn btn-primary btn-lg">Más Información</a>
+          <a href="https://wa.me/56932455405?text=Hola%20Lila%2C%20me%20interesa%20el%20plan%20por%20minuto" class="btn btn-white btn-lg" target="_blank">💬 Consultar por WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Tarifas Claras y Simples</h2>
+        <p class="section-subtitle">Sin letra chica. Pagas exactamente lo que usas.</p>
+      </div>
+
+      <div class="grid-3" style="margin-bottom:2rem;">
+        <div class="card" style="text-align:center; border:2px solid var(--orange);">
+          <div class="card-icon">⏱</div>
+          <h3 class="card-title">Por Minuto</h3>
+          <div class="plan-price" style="font-size:2.2rem;">$45</div>
+          <p class="card-text">Tarifa base por cada minuto de estacionamiento</p>
+        </div>
+        <div class="card" style="text-align:center;">
+          <div class="card-icon">🕐</div>
+          <h3 class="card-title">1 Hora</h3>
+          <div class="plan-price" style="font-size:2.2rem;">$2.700</div>
+          <p class="card-text">Equivalente a 60 minutos continuo de uso</p>
+        </div>
+        <div class="card" style="text-align:center;">
+          <div class="card-icon">📅</div>
+          <h3 class="card-title">Máximo Diario</h3>
+          <div class="plan-price" style="font-size:2.2rem;">$10.800</div>
+          <p class="card-text">Tope garantizado por día, sin importar el tiempo</p>
+        </div>
+      </div>
+
+      <div style="text-align:center; padding:24px; background:var(--gray-bg); border-radius:var(--radius); max-width:600px; margin:0 auto;">
+        <p style="font-size:1rem; color:var(--gray-mid); margin-bottom:8px;">💡 <strong>Ejemplo de uso:</strong></p>
+        <p style="color:var(--gray);">Si estacionas 3 horas para hacer compras → <strong>$8.100</strong>. Si te quedas todo el día → máximo <strong>$10.800</strong>, nunca más.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ideal para -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">¿Para quién es el Plan Por Minuto?</h2>
+      </div>
+      <div class="grid-2">
+        <div class="card">
+          <h3 class="card-title" style="color:var(--orange);">Ideal para</h3>
+          <ul class="feature-list">
+            <li>Compras rápidas en Barrio Meiggs</li>
+            <li>Visitas ocasionales a Santiago Centro</li>
+            <li>Trámites puntuales en la zona</li>
+            <li>Clientes que no vienen todos los días</li>
+            <li>Quienes prefieren no comprometerse con un mes</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3 class="card-title" style="color:var(--orange);">Ventajas clave</h3>
+          <ul class="feature-list">
+            <li>Sin contrato ni pago anticipado</li>
+            <li>Pagas exactamente lo que usas</li>
+            <li>Máximo diario garantizado ($10.800)</li>
+            <li>Disponible para todos, sin registro previo</li>
+            <li>Misma seguridad y comodidad del plan mensual</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Comparativa vs Plan Mensual -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Por Minuto vs Plan Mensual</h2>
+        <p class="section-subtitle">¿Cuál te conviene más? Aquí la comparativa honesta.</p>
+      </div>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Característica</th>
+              <th>Plan Por Minuto</th>
+              <th>Plan Mensual</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Compromiso</td>
+              <td>Ninguno</td>
+              <td>Pago mensual</td>
+            </tr>
+            <tr>
+              <td>Precio</td>
+              <td>$45/min (máx. $10.800/día)</td>
+              <td>$110.000 – $140.000/mes</td>
+            </tr>
+            <tr>
+              <td>Ideal si vas</td>
+              <td>Menos de 12 veces al mes</td>
+              <td>Más de 12 veces al mes</td>
+            </tr>
+            <tr>
+              <td>Horario</td>
+              <td>Según disponibilidad</td>
+              <td>07:00–22:00 o 24/7</td>
+            </tr>
+            <tr>
+              <td>Seguridad</td>
+              <td>Igual: vigilancia 24/7</td>
+              <td>Igual: vigilancia 24/7</td>
+            </tr>
+            <tr>
+              <td>Baños gratuitos</td>
+              <td>Incluidos</td>
+              <td>Incluidos</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="text-align:center; margin-top:20px; color:var(--gray-mid); font-size:0.95rem;">
+        💡 Si vas más de 12 veces al mes, el plan mensual te sale más económico. <a href="/plan-mensual" style="color:var(--orange); font-weight:600;">Ver Plan Mensual</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- Cómo funciona -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">¿Cómo funciona?</h2>
+        <p class="section-subtitle">Sin complicaciones. Llega, estaciona y listo.</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="step-number">1</div>
+          <h4>Llega</h4>
+          <p>Dirígete a Rodulfo Phillipi 36. Nuestro personal te recibirá en la entrada.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">2</div>
+          <h4>Estaciona</h4>
+          <p>Elige tu espacio. El tiempo comienza a contar desde tu ingreso.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">3</div>
+          <h4>Compra o visita</h4>
+          <p>Haz tus trámites o compras con tranquilidad. Tu auto está seguro.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">4</div>
+          <h4>Paga al salir</h4>
+          <p>Pagas solo el tiempo usado. Máximo $10.800 por día, garantizado.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Estaciona hoy sin compromiso</h2>
+      <p>Flexibilidad total con la misma seguridad del plan mensual.</p>
+      <div class="cta-buttons">
+        <a href="#formulario" class="btn btn-white btn-lg">Más Información</a>
+        <a href="https://wa.me/56932455405?text=Hola%20Lila%2C%20me%20interesa%20el%20plan%20por%20minuto" target="_blank" class="btn btn-outline btn-lg" style="border-color:white; color:white;">💬 Consultar por WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Formulario -->
+  <ContactForm productType="estacionamientos" />
+
+</Layout>
