@@ -30,7 +30,7 @@ const config = formConfig[productType];
       <p class="form-subtitle">Completa el formulario y te contactamos a la brevedad.</p>
 
       <div id="form-success" class="form-success">
-        <div class="ic">✅</div>
+        <div class="ic"><i class="fas fa-check-circle"></i></div>
         <h3>¡Consulta recibida!</h3>
         <p>Gracias por contactarnos. Nos comunicaremos contigo a la brevedad.</p>
       </div>
@@ -86,10 +86,10 @@ const config = formConfig[productType];
       <div class="form-contact-links">
         <p style="width:100%; text-align:center; color:var(--gray-mid); font-size:0.9rem; margin-bottom:4px;">¿Prefieres contactar directamente?</p>
         <a href={`https://wa.me/${config.whatsapp}`} target="_blank" class="form-contact-link wa">
-          💬 WhatsApp
+          <i class="fab fa-whatsapp" style="margin-right:0.35rem"></i>WhatsApp
         </a>
         <a href={`tel:+${config.whatsapp}`} class="form-contact-link tel">
-          📞 Llamar
+          <i class="fas fa-phone" style="margin-right:0.35rem"></i>Llamar
         </a>
       </div>
     </div>

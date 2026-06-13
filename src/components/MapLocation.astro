@@ -30,7 +30,7 @@ const isSingle = locations.length === 1;
         <div class="map-card">
           {loc.title && (
             <div class="map-card-header">
-              <span class="map-pin-icon">📍</span>
+              <span class="map-pin-icon"><i class="fas fa-map-pin"></i></span>
               <div>
                 <p class="map-card-title">{loc.title}</p>
                 <p class="map-card-address">{loc.address}</p>
@@ -39,7 +39,7 @@ const isSingle = locations.length === 1;
           )}
           {!loc.title && (
             <div class="map-card-header">
-              <span class="map-pin-icon">📍</span>
+              <span class="map-pin-icon"><i class="fas fa-map-pin"></i></span>
               <p class="map-card-address">{loc.address}</p>
             </div>
           )}
