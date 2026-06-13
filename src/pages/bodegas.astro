@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import ContactForm from '../components/ContactForm.astro';
 import GalleryBodegas from '../components/GalleryBodegas.astro';
+import MapLocation from '../components/MapLocation.astro';
 ---
 
 <Layout title="Bodegas en Santiago Centro" description="Arrienda bodegas seguras en Santiago Centro. Tamaños desde 100m² hasta 900m². Seguridad 24/7, fácil acceso desde Barrio Meiggs.">
@@ -87,6 +88,15 @@ import GalleryBodegas from '../components/GalleryBodegas.astro';
       </div>
     </div>
   </section>
+
+  <!-- Mapa de ubicaciones -->
+  <MapLocation
+    title="Nuestras Ubicaciones en el Mapa"
+    locations={[
+      { title: 'Recinto Santiago', address: 'Almirante Churruca 3181, Santiago' },
+      { title: 'Recinto Estación Central', address: 'Avenida Buzeta 3558, Estación Central, Santiago' },
+    ]}
+  />
 
   <!-- Tabla de tamaños -->
   <section class="section">

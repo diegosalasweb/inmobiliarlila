@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import ContactForm from '../components/ContactForm.astro';
+import MapLocation from '../components/MapLocation.astro';
 ---
 
 <Layout title="Estacionamiento Techado en Santiago Centro" description="Estacionamiento techado seguro en Barrio Meiggs. Planes mensuales y por minuto. Vigilancia 24/7, ubicación estratégica cerca del Metro ULA.">
@@ -88,6 +89,14 @@ import ContactForm from '../components/ContactForm.astro';
       </div>
     </div>
   </section>
+
+  <!-- Mapa de ubicación -->
+  <MapLocation
+    title="Encuéntranos en el Mapa"
+    locations={[
+      { title: 'Estacionamiento Metro ULA', address: 'Rodulfo Phillipi 36, Santiago' },
+    ]}
+  />
 
   <!-- Planes -->
   <section class="section">
