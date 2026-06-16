@@ -581,9 +581,10 @@ tr:hover td { background: var(--orange-light); }
 }
 .footer-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 40px;
+  grid-template-columns: 1.1fr 1fr 1fr;
+  gap: 48px;
   margin-bottom: 48px;
+  align-items: start;
 }
 .footer-col h4 {
   color: var(--white);
@@ -593,7 +594,12 @@ tr:hover td { background: var(--orange-light); }
   text-transform: uppercase;
   letter-spacing: 0.04em;
 }
-.footer-col ul { display: flex; flex-direction: column; gap: 8px; }
+.footer-col ul {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 20px;
+}
 .footer-col ul li a {
   color: rgba(255,255,255,0.7);
   font-size: 0.9rem;
@@ -605,6 +611,32 @@ tr:hover td { background: var(--orange-light); }
   font-size: 0.9rem;
   line-height: 1.7;
 }
+.footer-contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 16px;
+}
+.footer-contact-info p {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.88rem;
+  color: rgba(255,255,255,0.65);
+  margin: 0;
+}
+.footer-contact-info i {
+  width: 14px;
+  text-align: center;
+  color: var(--orange);
+  flex-shrink: 0;
+}
+.footer-contact-info a {
+  color: rgba(255,255,255,0.65);
+  transition: color var(--transition);
+}
+.footer-contact-info a:hover { color: var(--orange); }
 .footer-logo {
   display: flex;
   align-items: center;
@@ -625,7 +657,7 @@ tr:hover td { background: var(--orange-light); }
 /* ── Responsive ───────────────────────────────────────────────── */
 @media (max-width: 1024px) {
   .grid-4       { grid-template-columns: repeat(2, 1fr); }
-  .footer-grid  { grid-template-columns: repeat(2, 1fr); }
+  .footer-grid  { grid-template-columns: 1fr 1fr 1fr; gap: 28px; }
 }
 
 @media (max-width: 768px) {
@@ -639,12 +671,14 @@ tr:hover td { background: var(--orange-light); }
   .steps        { flex-direction: column; }
   .contact-info { flex-direction: column; }
   .form-wrapper { padding: 32px 20px; }
-  .footer-grid  { grid-template-columns: 1fr 1fr; gap: 28px; }
+  .footer-grid  { grid-template-columns: 1fr 1fr; gap: 24px; }
+  .footer-brand { grid-column: 1 / -1; }
   .header-phones { display: none; }
 }
 
 @media (max-width: 480px) {
   .footer-grid  { grid-template-columns: 1fr; }
+  .footer-brand { grid-column: auto; }
   .hero-cta     { flex-direction: column; }
   h1            { font-size: 1.9rem; }
 }
