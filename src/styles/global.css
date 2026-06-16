@@ -586,6 +586,9 @@ tr:hover td { background: var(--orange-light); }
   margin-bottom: 48px;
   align-items: start;
 }
+.footer-grid--single {
+  grid-template-columns: 1.1fr 1fr;
+}
 .footer-col h4 {
   color: var(--white);
   font-size: 0.95rem;

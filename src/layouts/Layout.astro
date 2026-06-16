@@ -4,9 +4,10 @@ import '../styles/global.css';
 interface Props {
   title: string;
   description?: string;
+  section?: 'bodegas' | 'estacionamientos';
 }
 
-const { title, description = 'Inmobiliaria Lila - Bodegas y Estacionamientos en Santiago Centro' } = Astro.props;
+const { title, description = 'Inmobiliaria Lila - Bodegas y Estacionamientos en Santiago Centro', section } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -35,10 +36,6 @@ const { title, description = 'Inmobiliaria Lila - Bodegas y Estacionamientos en 
             <a href="/estacionamientos">Estacionamientos</a>
           </nav>
           <div class="header-contact">
-            <div class="header-phones">
-              <a href="tel:+56932455405" class="header-phone"><i class="fas fa-phone"></i> Bodegas: +56 9 3245 5405</a>
-              <a href="tel:+56920405954" class="header-phone"><i class="fas fa-phone"></i> Estacionamientos: +56 9 2040 5954</a>
-            </div>
             <a href="https://wa.me/56932455405" target="_blank" class="btn-wa">
               <i class="fab fa-whatsapp"></i> WhatsApp
             </a>
@@ -53,7 +50,7 @@ const { title, description = 'Inmobiliaria Lila - Bodegas y Estacionamientos en 
 
     <footer class="site-footer">
       <div class="container">
-        <div class="footer-grid">
+        <div class={`footer-grid${section ? ' footer-grid--single' : ''}`}>
 
           <div class="footer-col footer-brand">
             <div class="footer-logo">
@@ -63,6 +60,7 @@ const { title, description = 'Inmobiliaria Lila - Bodegas y Estacionamientos en 
             <p>Soluciones de almacenamiento y estacionamiento en Santiago Centro.</p>
           </div>
 
+          {(!section || section === 'estacionamientos') && (
           <div class="footer-col">
             <h4>Estacionamientos</h4>
             <ul>
@@ -78,7 +76,9 @@ const { title, description = 'Inmobiliaria Lila - Bodegas y Estacionamientos en 
               <p><i class="fas fa-envelope"></i><a href="mailto:estacionamientoslila@gmail.com">estacionamientoslila@gmail.com</a></p>
             </div>
           </div>
+          )}
 
+          {(!section || section === 'bodegas') && (
           <div class="footer-col">
             <h4>Bodegas</h4>
             <ul>
@@ -94,6 +94,7 @@ const { title, description = 'Inmobiliaria Lila - Bodegas y Estacionamientos en 
               <p><i class="fas fa-envelope"></i><a href="mailto:bodegasbuzeta@gmail.com">bodegasbuzeta@gmail.com</a></p>
             </div>
           </div>
+          )}
 
         </div>
         <div class="footer-bottom">
