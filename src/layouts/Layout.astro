@@ -21,6 +21,14 @@ const { title, description = 'Inmobiliaria Lila - Bodegas y Estacionamientos en 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-422L615VKD"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-422L615VKD');
+    </script>
   </head>
   <body>
     <header class="site-header">
@@ -35,10 +43,8 @@ const { title, description = 'Inmobiliaria Lila - Bodegas y Estacionamientos en 
             <a href="/bodegas">Bodegas</a>
             <a href="/estacionamientos">Estacionamientos</a>
           </nav>
-          <div class="header-contact">
-            <a href="https://wa.me/56932455405" target="_blank" class="btn-wa">
-              <i class="fab fa-whatsapp"></i> WhatsApp
-            </a>
+          <div class="header-contact" id="header-wa-container">
+            <!-- WhatsApp dinámico según página -->
           </div>
         </div>
       </div>
@@ -107,6 +113,34 @@ const { title, description = 'Inmobiliaria Lila - Bodegas y Estacionamientos en 
       body {
         font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       }
+      .header-wa-group {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+      }
     </style>
+
+    <script>
+      (function() {
+        var path = window.location.pathname;
+        var container = document.getElementById('header-wa-container');
+        if (!container) return;
+
+        var WA_BODEGAS = 'https://wa.me/56932455405';
+        var WA_ESTAC  = 'https://wa.me/56920405954';
+
+        var btnBodegas = '<a href="' + WA_BODEGAS + '" target="_blank" class="btn-wa"><i class="fab fa-whatsapp"></i> Bodegas</a>';
+        var btnEstac   = '<a href="' + WA_ESTAC  + '" target="_blank" class="btn-wa"><i class="fab fa-whatsapp"></i> Estacionamientos</a>';
+
+        if (path === '/' || path === '') {
+          container.innerHTML = '<div class="header-wa-group">' + btnBodegas + btnEstac + '</div>';
+        } else if (path.startsWith('/bodegas')) {
+          container.innerHTML = btnBodegas;
+        } else {
+          // /estacionamientos, /plan-mensual, /plan-por-minuto y cualquier otra
+          container.innerHTML = btnEstac;
+        }
+      })();
+    </script>
   </body>
 </html>
