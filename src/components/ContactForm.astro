@@ -97,11 +97,15 @@ const config = formConfig[productType];
 </section>
 
 <script>
+  const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyOvKaMSZ5HtswLuIZ8IZrra0RTzpPnFczHcAmgmxL-6Ziym5fTP8liBSmwFT1iAWU09w/exec';
+
   const form = document.getElementById('contact-form') as HTMLFormElement;
   const success = document.getElementById('form-success') as HTMLDivElement;
+  const submitBtn = form?.querySelector('button[type="submit"]') as HTMLButtonElement | null;
+  const submitBtnDefaultText = submitBtn?.textContent ?? '';
 
   if (form) {
-    form.addEventListener('submit', (e) => {
+    form.addEventListener('submit', async (e) => {
       e.preventDefault();
 
       const formData = new FormData(form);
@@ -115,10 +119,40 @@ const config = formConfig[productType];
         page:      window.location.pathname,
       };
 
-      console.log('Form data:', data);
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Enviando...';
+      }
 
-      form.style.display = 'none';
-      if (success) success.style.display = 'block';
+      try {
+        // Content-Type text/plain evita el preflight CORS que Apps Script no maneja;
+        // doPost igual parsea el body como JSON.
+        await fetch(SCRIPT_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+          body: JSON.stringify(data),
+        });
+
+        form.style.display = 'none';
+        if (success) success.style.display = 'block';
+
+        const gtag = (window as any).gtag;
+        if (typeof gtag === 'function') {
+          gtag('event', 'conversion', {
+            'allow_custom_events': true,
+            'value': 1.0,
+            'currency': 'CLP',
+          });
+        }
+      } catch (err) {
+        console.error('Error al enviar el formulario:', err);
+        alert('Hubo un problema al enviar tu consulta. Intenta nuevamente o contáctanos por WhatsApp.');
+      } finally {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.textContent = submitBtnDefaultText;
+        }
+      }
     });
   }
 </script>
