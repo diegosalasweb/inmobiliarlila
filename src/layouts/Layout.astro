@@ -113,11 +113,44 @@ const { title, description = 'Inmobiliaria Lila - Bodegas y Estacionamientos en 
       body {
         font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       }
+    </style>
+
+    <style is:global>
       .header-wa-group {
         display: flex;
         gap: 1rem;
         flex-wrap: wrap;
         align-items: center;
+      }
+
+      .btn-wa {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.5rem 1rem;
+        background: #25D366;
+        color: white;
+        text-decoration: none;
+        border-radius: 6px;
+        font-size: 0.9rem;
+        white-space: nowrap;
+        transition: background 0.3s ease;
+      }
+
+      .btn-wa:hover {
+        background: #1eaa50;
+      }
+
+      @media (max-width: 768px) {
+        .header-wa-group {
+          flex-direction: column;
+          gap: 0.5rem;
+        }
+
+        .btn-wa {
+          width: 100%;
+          justify-content: center;
+        }
       }
     </style>
 

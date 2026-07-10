@@ -558,21 +558,6 @@ tr:hover td { background: var(--orange-light); }
   transition: color var(--transition);
 }
 .header-phone:hover { color: var(--orange); }
-.btn-wa {
-  background: #25D366;
-  color: var(--white);
-  padding: 7px 12px;
-  border-radius: var(--radius-sm);
-  font-weight: 600;
-  font-size: 0.8rem;
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  white-space: nowrap;
-  transition: opacity var(--transition);
-}
-.btn-wa:hover { opacity: 0.88; }
-
 /* ── Footer ───────────────────────────────────────────────────── */
 .site-footer {
   background: var(--gray);
